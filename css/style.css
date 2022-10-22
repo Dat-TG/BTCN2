@@ -1,11 +1,5 @@
-.container {
-    height: 100vh !important;
-    width: 100% !important;
-}
-
-* {
-    margin: 0;
-    padding: 0;
+.container-fluid {
+    background-color: white;
 }
 
 #mssv, #headingTitle, #keyAPI {
@@ -28,4 +22,18 @@
 
 .alert {
     background-color: white;
+    margin-top: 10px !important;
+    margin-bottom: 0px !important;
+}
+
+
+
+#searchForm {
+    display: flex;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+#inputSearch, #buttonSearch {
+    margin: 5px;
 }

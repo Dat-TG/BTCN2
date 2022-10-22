@@ -5,7 +5,7 @@ export default {
         }
     },
     template: `
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-secondary" role="alert">
             <div class="row">
                 <div class="col-4" id="mssv">20120454</div>
                 <div class="col-4" id="headingTitle">Movies info</div>
