@@ -1,5 +1,7 @@
 import voH from "./header.js"
 import voN from "./nav.js"
+import voNew from "./newest.js"
+import voP from "./popular.js"
 
 export default {
     data() {
@@ -9,7 +11,9 @@ export default {
     },
     components: {
         voH,
-        voN
+        voN,
+        voNew,
+        voP,
     },
     template: `
     <div class="row">
@@ -20,6 +24,16 @@ export default {
     <div class="row">
         <div class="col-12">
             <voN/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <voNew/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <voP/>
         </div>
     </div>
     `

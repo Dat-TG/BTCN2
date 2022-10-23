@@ -1,5 +1,5 @@
 .container-fluid {
-    background-color: white;
+    background-color: #D3D3D3;
 }
 
 #mssv, #headingTitle, #keyAPI {
@@ -36,4 +36,25 @@
 
 #inputSearch, #buttonSearch {
     margin: 5px;
+}
+
+#newestSlide > .carousel-inner > .carousel-item > img {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+    min-width: 500px;
+    min-height: 500px;
+    max-width: 700px;
+    max-height: 700px;
+  }
+
+#popularSlide >  .carousel-inner > .carousel-item > .row > .col-4 > img {
+    width: 500px !important;
+    height: 400px !important;
+}
+
+.carousel{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
