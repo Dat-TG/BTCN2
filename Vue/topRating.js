@@ -27,13 +27,19 @@ export default {
             }
             this.movies=arr.map(obj=>new Movie(obj));
             console.log(this.trippleMovies, this.firstThreeMovies);
+        },
+        movieClick(obj) {
+            this.$emit("movieClick", obj);
+            console.log("click",obj);
         }
     },
+    props:['isHide'],
     mounted() {
         this.load();
     },
     template:
     `
+    <template v-if="!isHide">
     <h2 class="text-start">
         Top Rating
     </h2>
@@ -58,7 +64,7 @@ export default {
             <div class="row">
                 <template v-for="mm in m"> 
                     <div class="col-4">
-                        <img :src="mm.image" class="d-block" :alt="mm.title">
+                        <img :src="mm.image" class="d-block" :alt="mm.title" @click="movieClick(mm)">
                     </div>
                 </template>
             </div>
@@ -69,7 +75,7 @@ export default {
                 <div class="row">
                     <template v-for="mm in m"> 
                         <div class="col-4">
-                            <img :src="mm.image" class="d-block" :alt="mm.title">
+                            <img :src="mm.image" class="d-block" :alt="mm.title" @click="movieClick(mm)">
                         </div>
                     </template>
                 </div>
@@ -83,6 +89,7 @@ export default {
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
     </div>
+    </template>
 
     `
 }

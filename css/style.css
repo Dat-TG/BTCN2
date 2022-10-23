@@ -21,10 +21,9 @@
     font-size: 16px;
 }
 
-.alert {
-    background-color: white;
-    margin-top: 10px !important;
-    margin-bottom: 0px !important;
+.alert-dark {
+    background-color: #070D0D !important;
+    color: white !important;
 }
 
 
@@ -109,3 +108,8 @@ img {
   #topRatingSlide .carousel-control-next {
     justify-content: flex-end;
   }
+ 
+template .container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

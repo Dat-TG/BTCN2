@@ -3,11 +3,17 @@ import voN from "./nav.js"
 import voNew from "./newest.js"
 import voP from "./popular.js"
 import voT from "./topRating.js"
+import voD from "./detailMovie.js"
+window.addEventListener('popstate', function(e) {
+    console.log("back");
+    window.location.href="./default.html";
+},false);
 
 export default {
     data() {
         return {
-            
+            IsHide: false,
+            mv: null,
         }
     },
     components: {
@@ -16,6 +22,17 @@ export default {
         voNew,
         voP,
         voT,
+        voD
+    },
+    methods: {
+        loadDetailMovie(obj) {
+            this.mv=obj;
+            this.IsHide=true;
+            history.pushState(null, "", "/"+obj.title.toString());
+        }
+    },
+    mounted() {
+        window.history.pushState(null, "", "./");
     },
     template: `
     <div class="row">
@@ -29,18 +46,23 @@ export default {
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <voNew/>
+        <div class="col-12 text-center">
+            <voD :isHide='IsHide' :movie='mv'/>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <voP/>
+            <voNew :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <voT/>
+            <voP :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <voT :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
         </div>
     </div>
     `
