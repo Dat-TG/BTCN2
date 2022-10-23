@@ -22,7 +22,7 @@ export default {
                 $(".text-start").css("color","white");
                 $(".navbar").removeClass("alert-secondary");
                 $(".navbar").addClass("alert-dark");
-                $("#detailMovie").css("color","white");
+                $("#info").style("color","white","important");
                 $(".alert").removeClass("alert-secondary");
                 $(".alert").addClass("alert-dark");
             }
@@ -32,7 +32,7 @@ export default {
                 $(".text-start").css("color","black");
                 $(".navbar").removeClass("alert-dark");
                 $(".navbar").addClass("alert-secondary");
-                $("#detailMovie").css("color","black");
+                $("#info").style("color","black","important");
                 $(".alert").removeClass("alert-dark");
                 $(".alert").addClass("alert-secondary");
             }

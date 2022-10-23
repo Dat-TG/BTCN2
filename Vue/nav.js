@@ -1,7 +1,13 @@
 export default {
     data() {
         return {
-            
+            str: "",
+        }
+    },
+    methods: {
+        handleSearch() {
+            this.$emit("search", this.str);
+            console.log(this.str);
         }
     },
     template: 
@@ -14,9 +20,9 @@ export default {
                 </li>
             </ul>
             <form id="searchForm" class="form-inline my-2 my-lg-0">
-                <input id="inputSearch" class="form-control mr-sm-2" type="search" placeholder="Search"
+                <input v-model="str" id="inputSearch" class="form-control mr-sm-2" type="search" placeholder="Search"
                     aria-label="Search">
-                <button id="buttonSearch" class="btn btn-outline-success" type="button">Search</button>
+                <button id="buttonSearch" class="btn btn-outline-success" type="button" @click="handleSearch">Search</button>
             </form>
         </div>
     </nav>

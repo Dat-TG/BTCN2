@@ -17,5 +17,6 @@ export default class {
         this.rankUpDown=obj.rankUpDown;
         this.crew=obj.crew;
         this.imDbRatingCount=obj.imDbRatingCount;
+        this.description=obj.description;
     }
 }

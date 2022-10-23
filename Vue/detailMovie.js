@@ -13,8 +13,9 @@ export default {
     <template v-if="isHide" id="detailMovie">
         <img :src="movie.image" :alt="movie.title">
         <br>
-        <div class="container">
-            <p class="text-start">
+        <br>
+        <div class="container ms-auto me-auto">
+            <p class="text-start border border-primary border-5 rounded p-3" id="info">
                 <template v-if="movie.title!=null"><b>Title</b>: {{movie.title}} <br></template>
                 <template v-if="movie.year!=null"> <b>Year</b>: {{movie.year}} <br></template>
                 <template v-if="movie.crew!=null"> <b>Crew</b>: {{movie.crew}} <br></template>
@@ -26,6 +27,7 @@ export default {
                 <template v-if="movie.rank!=null"> <b>Rank</b>: {{movie.rank}}<br></template>
                 <template v-if="movie.contentRating!=null"> <b>Content Rating</b>: {{movie.contentRating}}<br></template>
                 <template v-if="movie.imDbRating!=null"> <b>imDb Rating</b>: {{movie.imDbRating}}<br></template>
+                <template v-if="movie.description!=null"> <b>Description</b>: {{movie.description}}<br></template>
             </p>
         </div>
     </template>

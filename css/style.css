@@ -52,6 +52,9 @@
 img {
     width: 500px;
     height: 400px;
+    transition: transform .2s, visibility .2s;;
+    overflow: visible !important;
+    
 }
 
 .carousel{
@@ -209,4 +212,9 @@ template .container {
     75% {
       content: "Loading...";
     }
+  }
+
+
+  img:hover {
+    transform: scale(1.5);
   }

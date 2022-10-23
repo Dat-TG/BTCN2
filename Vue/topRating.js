@@ -1,4 +1,6 @@
 import Movie from "./movie.js"
+
+
 export default {
     data() {
         return {

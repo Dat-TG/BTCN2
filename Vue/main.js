@@ -5,6 +5,7 @@ import voP from "./popular.js"
 import voT from "./topRating.js"
 import voD from "./detailMovie.js"
 import voF from "./footer.js"
+import voS from "./searchMovie.js"
 window.addEventListener('popstate', function(e) {
     console.log("back");
     window.location.href="./default.html";
@@ -14,7 +15,10 @@ export default {
     data() {
         return {
             IsHide: false,
+            IsView: false,
             mv: null,
+            searchStr: "",
+            isViewSearch: false,
         }
     },
     components: {
@@ -25,21 +29,30 @@ export default {
         voT,
         voD,
         voF,
+        voS,
     },
     methods: {
         loadDetailMovie(obj) {
             this.mv=obj;
             this.IsHide=true;
-            history.pushState(null, "", "/"+obj.title.toString());
+            this.IsView=true;
+            history.pushState(null, "", "/movie?title="+obj.title.toString());
+        },
+        handleSearch(src) {
+            this.searchStr=src;
+            console.log("searchStr",this.searchStr);
+            this.IsHide=true;
+            this.isViewSearch=true;
+            history.pushState(null, "", "/movie?search?title="+obj.title.toString());
         }
     },
     beforeCreate() {
     },
     mounted() {
-        window.history.pushState(null, "", "./default.html");
+        window.history.pushState(null, "", "");
         $('#main').fadeOut();
-        $("#main").delay(3000).fadeIn('slow');
-        $('#preloader').delay(3000).fadeOut('slow');
+        $("#main").delay(2000).fadeIn('slow');
+        $('#preloader').delay(2000).fadeOut('slow');
     },
     template: `
     <div class='loadercontainer' id="preloader">
@@ -61,12 +74,17 @@ export default {
         </div>
         <div class="row">
             <div class="col-12">
-                <voN/>
+                <voN @search="(src)=>handleSearch(src)"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <voS :searchInfo='searchStr' :isShowSearch='isViewSearch'/>
             </div>
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <voD :isHide='IsHide' :movie='mv'/>
+                <voD :isHide='IsView' :movie='mv'/>
             </div>
         </div>
         <div class="row">
