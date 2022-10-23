@@ -21,7 +21,7 @@ export default {
                 }
             })
             this.movies=arr.map(obj=>new Movie(obj));
-            this.firstThreeMovies=this.movies.splice(0,3);
+            this.firstThreeMovies.push(this.movies.splice(0,3));
             for (let i=0;i<9;i++) {
                 this.trippleMovies.push(this.movies.splice(0, 3));
             }
@@ -38,6 +38,7 @@ export default {
         Most Popular
     </h2>
     <div id="popularSlide" class="carousel slide" data-bs-ride="carousel">
+    <div class="container position-relative">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#popularSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#popularSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -50,23 +51,30 @@ export default {
         <button type="button" data-bs-target="#popularSlide" data-bs-slide-to="8" aria-label="Slide 9"></button>
         <button type="button" data-bs-target="#popularSlide" data-bs-slide-to="9" aria-label="Slide 10"></button>
     </div>
+    </div>
     <div class="carousel-inner" role="listbox">
+    <template  v-for="m in firstThreeMovies">
         <div class="carousel-item active">
-            <div class="row" v-for="m in FirstThreeMovies">
-                <div class="col-4">
-                    <img :src="m.image" class="d-block" :alt="m.title">
-                </div>
+            <div class="row">
+                <template v-for="mm in m"> 
+                    <div class="col-4">
+                        <img :src="mm.image" class="d-block" :alt="mm.title">
+                    </div>
+                </template>
             </div>
         </div>
-        <div class="carousel-item">
-            <div class="row" v-for="m in trippleMovies">
-                <div v-for="mm in m"> 
-                <div class="col-4">
-                    <img :src="mm.image" class="d-block" :alt="mm.title">
-                </div>
+    </template>
+        <template  v-for="m in trippleMovies">
+            <div class="carousel-item">
+                <div class="row">
+                    <template v-for="mm in m"> 
+                        <div class="col-4">
+                            <img :src="mm.image" class="d-block" :alt="mm.title">
+                        </div>
+                    </template>
                 </div>
             </div>
-        </div>
+        </template>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#popularSlide" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
