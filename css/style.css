@@ -68,8 +68,19 @@ img {
     padding-right:15px;
     top: -50px;
   }
+  #topRatingSlide .carousel-indicators {
+    top: 10px;
+    justify-content:flex-end;
+    margin:0;
+    padding-left:15px;
+    padding-right:15px;
+    top: -50px;
+  }
 
   #popularSlide .carousel-inner {
+    margin-top:50px;
+ }
+ #topRatingSlide .carousel-inner {
     margin-top:50px;
  }
 
@@ -89,5 +100,12 @@ img {
     justify-content: flex-start;
   }
   #popularSlide .carousel-control-next {
+    justify-content: flex-end;
+  }
+
+  #topRatingSlide .carousel-control-prev {
+    justify-content: flex-start;
+  }
+  #topRatingSlide .carousel-control-next {
     justify-content: flex-end;
   }

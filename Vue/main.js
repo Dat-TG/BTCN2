@@ -2,6 +2,7 @@ import voH from "./header.js"
 import voN from "./nav.js"
 import voNew from "./newest.js"
 import voP from "./popular.js"
+import voT from "./topRating.js"
 
 export default {
     data() {
@@ -14,6 +15,7 @@ export default {
         voN,
         voNew,
         voP,
+        voT,
     },
     template: `
     <div class="row">
@@ -34,6 +36,11 @@ export default {
     <div class="row">
         <div class="col-12">
             <voP/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <voT/>
         </div>
     </div>
     `
