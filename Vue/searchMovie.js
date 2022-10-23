@@ -10,7 +10,8 @@ export default {
     methods: {
         async load(src) {
             console.log("info",src);
-            const res=await fetch("json/search_"+src.toString()+".json");
+            src=src.replace(" ","%20");
+            const res=await fetch("https://imdb-api.com/en/API/SearchMovie/k_wasv29hw/"+src.toString());
             const rs=await res.json();
             var arr=[];
             $.each(rs.results, function(i, v) {
@@ -41,7 +42,7 @@ export default {
         <div class="row">
             <template v-for="mm in m">
             <div class="col-4">
-                <div class="card ms-auto me-auto" style="width: 18rem;">
+                <div class="card ms-auto me-auto" style="width: 18rem;" @click="movieClick(mm)">
                     <img :src="mm.image" class="card-img-top" :alt="mm.title">
                     <div class="card-body">
                         <p class="text-center fw-bold">{{mm.title}}</p>

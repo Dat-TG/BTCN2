@@ -9,7 +9,7 @@ export default {
     },
     methods: {
         async load() {
-            const res=await fetch("json/MostPopular.json");
+            const res=await fetch("https://imdb-api.com/en/API/MostPopularMovies/k_wasv29hw");
             const rs=await res.json();
             var arr=[];
             var len=0;

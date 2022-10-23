@@ -9,7 +9,7 @@ export default {
     },
     methods: {
         async load() {
-            const res=await fetch("json/InTheaters.json");
+            const res=await fetch("https://imdb-api.com/en/API/InTheaters/k_wasv29hw");
             const rs=await res.json();
             var arr=[];
             var len=0;

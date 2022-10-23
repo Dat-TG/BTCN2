@@ -11,6 +11,7 @@ window.addEventListener('popstate', function(e) {
     window.location.href="./default.html";
 },false);
 
+
 export default {
     data() {
         return {
@@ -36,6 +37,7 @@ export default {
             this.mv=obj;
             this.IsHide=true;
             this.IsView=true;
+            this.isViewSearch=false;
             history.pushState(null, "", "/movie?title="+obj.title.toString());
         },
         handleSearch(src) {
@@ -43,7 +45,7 @@ export default {
             console.log("searchStr",this.searchStr);
             this.IsHide=true;
             this.isViewSearch=true;
-            history.pushState(null, "", "/movie?search?title="+obj.title.toString());
+            history.pushState(null, "", "/movie?search?title="+src);
         }
     },
     beforeCreate() {
@@ -79,7 +81,7 @@ export default {
         </div>
         <div class="row">
             <div class="col-12">
-                <voS :searchInfo='searchStr' :isShowSearch='isViewSearch'/>
+                <voS :searchInfo='searchStr' :isShowSearch='isViewSearch' @movieClick="(obj)=>loadDetailMovie(obj)"/>
             </div>
         </div>
         <div class="row">

@@ -22,7 +22,7 @@ export default {
                 $(".text-start").css("color","white");
                 $(".navbar").removeClass("alert-secondary");
                 $(".navbar").addClass("alert-dark");
-                $("#info").style("color","white","important");
+                $("#info").css("color","white");
                 $(".alert").removeClass("alert-secondary");
                 $(".alert").addClass("alert-dark");
             }
@@ -32,7 +32,7 @@ export default {
                 $(".text-start").css("color","black");
                 $(".navbar").removeClass("alert-dark");
                 $(".navbar").addClass("alert-secondary");
-                $("#info").style("color","black","important");
+                $("#info").css("color","black");
                 $(".alert").removeClass("alert-dark");
                 $(".alert").addClass("alert-secondary");
             }
@@ -45,7 +45,7 @@ export default {
                 <div class="col-4" id="mssv">20120454</div>
                 <div class="col-4" id="headingTitle">Movies info</div>
                 <div class="col-4 d-flex align-items-end flex-column bd-highlight mb-3 justify-content-between" id="keyAPI">
-                    <div class="p-2 bd-highlight">key API</div>
+                    <div class="p-2 bd-highlight">k_wasv29hw</div>
                     <div class="form-check form-switch mt-auto p-2 bd-highlight">
                         <input class="form-check-input" type="checkbox" id="darkmode" name="darkmode" value="light" @change="darkModeHandle">
                         <label class="form-check-label" for="mySwitch">Dark Mode</label>

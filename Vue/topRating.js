@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         async load() {
-            const res=await fetch("json/250movies.json");
+            const res=await fetch("https://imdb-api.com/en/API/Top250Movies/k_wasv29hw");
             const rs=await res.json();
             var arr=[];
             var len=0;
