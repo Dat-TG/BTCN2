@@ -10,7 +10,7 @@ export default {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a id="Home" class="nav-link navbar-brand font-weight-bold" href="#">Home</a>
+                    <a id="Home" class="nav-link navbar-brand font-weight-bold" href="./default.html">Home</a>
                 </li>
             </ul>
             <form id="searchForm" class="form-inline my-2 my-lg-0">

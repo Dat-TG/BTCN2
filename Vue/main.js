@@ -33,43 +33,61 @@ export default {
             history.pushState(null, "", "/"+obj.title.toString());
         }
     },
+    beforeCreate() {
+    },
     mounted() {
-        window.history.pushState(null, "", "./");
+        window.history.pushState(null, "", "./default.html");
+        $('#main').fadeOut();
+        $("#main").delay(3000).fadeIn('slow');
+        $('#preloader').delay(3000).fadeOut('slow');
     },
     template: `
-    <div class="row">
-        <div class="col-12">
-            <voH/>
+    <div class='loadercontainer' id="preloader">
+        <div class='loader'>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <voN/>
+    <div id="main">
+        <div class="row">
+            <div class="col-12">
+                <voH/>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12 text-center">
-            <voD :isHide='IsHide' :movie='mv'/>
+        <div class="row">
+            <div class="col-12">
+                <voN/>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <voNew :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+        <div class="row">
+            <div class="col-12 text-center">
+                <voD :isHide='IsHide' :movie='mv'/>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <voP :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+        <div class="row">
+            <div class="col-12">
+                <voNew :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <voT :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+        <div class="row">
+            <div class="col-12">
+                <voP :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <voF/>
+        <div class="row">
+            <div class="col-12">
+                <voT :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <voF/>
+            </div>
         </div>
     </div>
     `
