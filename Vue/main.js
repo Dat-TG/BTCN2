@@ -4,6 +4,7 @@ import voNew from "./newest.js"
 import voP from "./popular.js"
 import voT from "./topRating.js"
 import voD from "./detailMovie.js"
+import voF from "./footer.js"
 window.addEventListener('popstate', function(e) {
     console.log("back");
     window.location.href="./default.html";
@@ -22,7 +23,8 @@ export default {
         voNew,
         voP,
         voT,
-        voD
+        voD,
+        voF,
     },
     methods: {
         loadDetailMovie(obj) {
@@ -63,6 +65,11 @@ export default {
     <div class="row">
         <div class="col-12">
             <voT :isHide='IsHide' @movieClick="(obj)=>loadDetailMovie(obj)"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <voF/>
         </div>
     </div>
     `

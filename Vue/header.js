@@ -23,6 +23,8 @@ export default {
                 $(".navbar").removeClass("alert-secondary");
                 $(".navbar").addClass("alert-dark");
                 $("#detailMovie").css("color","white");
+                $(".alert").removeClass("alert-secondary");
+                $(".alert").addClass("alert-dark");
             }
             else {
                 $(".container-fluid").css("backgroundColor","#A6A6A6");
@@ -31,6 +33,8 @@ export default {
                 $(".navbar").removeClass("alert-dark");
                 $(".navbar").addClass("alert-secondary");
                 $("#detailMovie").css("color","black");
+                $(".alert").removeClass("alert-dark");
+                $(".alert").addClass("alert-secondary");
             }
             console.log(val);
         }

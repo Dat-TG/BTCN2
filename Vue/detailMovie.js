@@ -21,7 +21,11 @@ export default {
                 <template v-if="movie.directors!=null"> <b>Directors</b>: {{movie.directors}} <br></template>
                 <template v-if="movie.plot!=null"> <b>Plot</b>: {{movie.plot}} <br></template>
                 <template v-if="movie.stars!=null"> <b>Stars</b>: {{movie.stars}} <br></template>
-                <template v-if="movie.genres!=null"> <b>Genres</b>: {{movie.genres}}</template>
+                <template v-if="movie.genres!=null"> <b>Genres</b>: {{movie.genres}}<br></template>
+                <template v-if="movie.runtimeMins!=null"> <b>Length</b>: {{movie.runtimeMins}}<br></template>
+                <template v-if="movie.rank!=null"> <b>Rank</b>: {{movie.rank}}<br></template>
+                <template v-if="movie.contentRating!=null"> <b>Content Rating</b>: {{movie.contentRating}}<br></template>
+                <template v-if="movie.imDbRating!=null"> <b>imDb Rating</b>: {{movie.imDbRating}}<br></template>
             </p>
         </div>
     </template>
